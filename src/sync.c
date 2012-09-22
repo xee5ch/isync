@@ -1386,7 +1386,7 @@ msg_copied( int sts, int uid, copy_vars_t *vars )
 	SVARS_CHECK_CANCEL_RET;
 	switch (sts) {
 	case SYNC_OK:
-		if (uid < 0)
+		if (uid < 0 && vars->srec)
 			svars->state[t] |= S_FIND;
 		msg_copied_p2( svars, vars->srec, t, vars->msg, uid );
 		break;
