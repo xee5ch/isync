@@ -1612,6 +1612,7 @@ msg_rtrashed( int sts, int uid, copy_vars_t *vars )
 		return;
 	}
 	free( vars );
+	t ^= 1;
 	svars->trash_done[t]++;
 	stats( svars );
 	sync_close( svars, t );
